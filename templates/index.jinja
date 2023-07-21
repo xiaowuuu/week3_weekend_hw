@@ -1,0 +1,22 @@
+{% extends 'base.jinja' %} {% block content %}
+    <h1 class="title_text">{{ title }}</h1>
+    <div class="form"></div>
+    <form action="/books" method="POST">
+
+    <label for="book_title">Book Title: </label>
+    <input type="text" id="book_title" name="book_title">
+
+    <label for="author">Author: </label>
+    <input type="text" id="author" name="author">
+
+    <label for="gengre">Genre: </label>
+    <input type="text" id="genre" name="genre">
+
+    <input class="submit" type="submit" value="Save">
+    </form>
+    {% for book in book_list %}
+    <h3>{{ book.book_title }}</h3>
+    <p>Author: {{ book.author }}</p>
+    <p>Genre: {{ book.genre }}</p>
+    {% endfor %}
+{% endblock content %}
