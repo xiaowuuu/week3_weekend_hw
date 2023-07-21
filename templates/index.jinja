@@ -3,20 +3,20 @@
     <div class="form"></div>
     <form action="/books" method="POST">
 
-    <label for="book_title">Book Title: </label>
+    <label for="book_title" class="form-imput">Book Title: </label>
     <input type="text" id="book_title" name="book_title">
 
-    <label for="author">Author: </label>
+    <label for="author" class="form-imput">Author: </label>
     <input type="text" id="author" name="author">
 
-    <label for="gengre">Genre: </label>
+    <label for="gengre" class="form-imput">Genre: </label>
     <input type="text" id="genre" name="genre">
 
     <input class="submit" type="submit" value="Save">
     </form>
     {% for book in book_list %}
     <h3>{{ book.book_title }}</h3>
-    <p>Author: {{ book.author }}</p>
-    <p>Genre: {{ book.genre }}</p>
+    <p><b>Author:</b> {{ book.author }}</p>
+    <p><b>Genre:</b> {{ book.genre }}</p>
     {% endfor %}
 {% endblock content %}
