@@ -6,14 +6,17 @@
     <div class="form"></div>
     <form action="/books" method="POST">
 
-    <label for="book_title" class="form-imput">Book Title: </label>
+    <label for="book_title" class="form-input">Book Title: </label>
     <input type="text" id="book_title" name="book_title">
 
-    <label for="author" class="form-imput">Author: </label>
+    <label for="author" class="form-input">Author: </label>
     <input type="text" id="author" name="author">
 
-    <label for="gengre" class="form-imput">Genre: </label>
+    <label for="gengre" class="form-input">Genre: </label>
     <input type="text" id="genre" name="genre">
+
+    <label for="checked_out" class="form-input">Available: </label>
+    <input type="checkbox" id="checked_out" name="checked_out" value="Yes">
 
     <input class="submit" type="submit" value="Save">
     </form>
@@ -21,5 +24,6 @@
     <h3>{{ book.book_title }}</h3>
     <p><b>Author:</b> {{ book.author }}</p>
     <p><b>Genre:</b> {{ book.genre }}</p>
+    <p><b>Available:</b> {{ book.checked_out }}</p>
     {% endfor %}
 {% endblock content %}
