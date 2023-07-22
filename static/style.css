@@ -7,6 +7,11 @@ html {
     font-family:'Times New Roman', Times, serif;
 }
 
+.hero_text {
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
 .menu {
     font-size: 20px;
     margin: 0 auto;
@@ -26,5 +31,5 @@ hr {
 
 h1 {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
 }

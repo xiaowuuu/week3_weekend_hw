@@ -7,7 +7,7 @@ books_blueprint = Blueprint("books", __name__)
 # list all the books
 @books_blueprint.route("/books")
 def index():
-    return render_template("index.jinja", title = "The most borrowed books", book_list = books)
+    return render_template("index.jinja", title = "New & Trending", book_list = books)
 
 # show individual book
 @books_blueprint.route("/books/<index>")
