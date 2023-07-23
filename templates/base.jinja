@@ -7,15 +7,21 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"
 />
 </head>
-<div class="container">
-<body>
-    <nav>
-    <a class="menu" href="/books">Books</a></li>
-    </nav>
-    <hr>
+<header class="header">
+<div class="container_header">
+<span class="header_logo"><img class="header_logo_img" src="static/book_logo.png" alt="book logo"></span>
+<span class="header_menu"><a class="header_menu" href="/books">Books</a></span>
+</div>
+</header>
+
+
+    <section class="hero">
+    <div class="container hero_wrapper">
     {% block content %}
         
     {% endblock content %}
+    </div>
+    </section>
 </body>
 </div>
 </html>

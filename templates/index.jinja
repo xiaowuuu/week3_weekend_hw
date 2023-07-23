@@ -1,9 +1,12 @@
 {% extends 'base.jinja' %} {% block content %}
     <div class="hero_text">
-    <h1 class="title_text">{{ title }}</h1>
+    {# new & trending #}
+    <h1 class="hero__title_text">{{ title }}</h1>
     <h3 class="subtitle_text">Our most borrowed books this month.</h3>
     </div>
-    <div class="form"></div>
+    <hr>
+    <section class="form">
+    <div class="form_container"></div>
     <form action="/books" method="POST">
 
     <label for="book_title" class="form-input">Book Title: </label>
@@ -14,16 +17,24 @@
 
     <label for="gengre" class="form-input">Genre: </label>
     <input type="text" id="genre" name="genre">
-
-    <label for="checked_out" class="form-input">Available: </label>
-    <input type="checkbox" id="checked_out" name="checked_out" value="Yes">
-
+    
     <input class="submit" type="submit" value="Save">
     </form>
+</section>
+
+    {# display an individual book #}
     {% for book in book_list %}
     <h3>{{ book.book_title }}</h3>
     <p><b>Author:</b> {{ book.author }}</p>
     <p><b>Genre:</b> {{ book.genre }}</p>
     <p><b>Available:</b> {{ book.checked_out }}</p>
+    <form action="/books/rent/<index>">
+
+{% if  book_unavailable %}
+    <input type="button" value="I want to borrow">
+{% else %}
+    <input type="button" value="I want to return">
+{% endif %}
+    </form>
     {% endfor %}
 {% endblock content %}
