@@ -27,6 +27,7 @@ html {
 
 .hero {
     background-color: #f0f0f0;
+    margin: 20px auto;
 }
 
 .hero_text {
