@@ -1,42 +1,37 @@
 {% extends 'base.jinja' %} {% block content %}
-    <div class="hero_text">
-    {# new & trending #}
-    <h1 class="hero__title_text">{{ title }}</h1>
-    <h3 class="subtitle_text">Our most borrowed books this month.</h3>
-    <hr>
-    </div>
-    
-    <section class="form">
+
+
+<section class="form">
     <div class="form_container"></div>
     <form action="/books" method="POST">
 
-    <label for="book_title" class="form-input">Book Title: </label>
-    <input type="text" id="book_title" name="book_title" required>
+        <label for="book_title" class="form-input">Book Title: </label>
+        <input type="text" id="book_title" name="book_title" required>
 
-    <label for="author" class="form-input">Author: </label>
-    <input type="text" id="author" name="author">
+        <label for="author" class="form-input">Author: </label>
+        <input type="text" id="author" name="author">
 
-    <label for="gengre" class="form-input">Genre: </label>
-    <input type="text" id="genre" name="genre">
-    
-    <input class="submit" type="submit" value="Save">
+        <label for="gengre" class="form-input">Genre: </label>
+        <input type="text" id="genre" name="genre">
+
+        <input class="submit" type="submit" value="Save">
     </form>
 </section>
 
-    {# display all books #}
+{# display all books #}
 
-    {% for book in book_list %}
-    <h3>{{ book.book_title }}</h3>
-    <p><b>Author:</b> {{ book.author }}</p>
-    <p><b>Genre:</b> {{ book.genre }}</p>
-    <p><b>Available:</b> {{ book.checked_out }}</p>
-    <form action="/books/rent/<index>">
+{% for book in book_list %}
+<h3>{{ book.book_title }}</h3>
+<p><b>Author:</b> {{ book.author }}</p>
+<p><b>Genre:</b> {{ book.genre }}</p>
+<p><b>Available:</b> {{ book.checked_out }}</p>
+<form action="/books/rent/<index>">
 
-{% if  book_unavailable %}
+    {% if book_unavailable %}
     <input type="button" value="I want to borrow">
-{% else %}
+    {% else %}
     <input type="button" value="I want to return">
-{% endif %}
-    </form>
-    {% endfor %}
+    {% endif %}
+</form>
+{% endfor %}
 {% endblock content %}

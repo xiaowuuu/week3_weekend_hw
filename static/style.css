@@ -12,12 +12,16 @@ full screen
 }
 
 html {
-    font-family:'Times New Roman', Times, serif;
+    font-family: 'Times New Roman', Times, serif;
     line-height: 25px;
 }
 
 .header {
     background-color: #ffffff;
+}
+
+.container_header {
+    margin-left: 20px;
 }
 
 .header_logo_img {
@@ -36,20 +40,36 @@ html {
     text-align: center;
 }
 
-.hero__title_text{
+.hero__title_text {
     font-size: 60px;
     margin: 90px 0 0 0;
 }
 
 .subtitle_text {
     font-size: 15px;
-    margin:15px 0 15px 0;
+    margin: 15px 0 10px 0;
 }
 
 hr {
     width: 30%;
-    margin:auto;
+    margin: auto;
+}
 
+/* homepage button */
+.container_button {
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.menu_button {
+    background-color: black;
+    border-radius: 20px;
+    color: white;
+    width: 5rem;
+    height: 2rem;
+    border: none;
 }
 
 /* form in the center */
@@ -65,10 +85,12 @@ hr {
     color: white;
     width: 5rem;
     height: 2rem;
+    border: none;
 }
+
+
 
 .container {
     display: block;
     text-align: center;
 }
-
